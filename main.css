@@ -380,7 +380,8 @@ img{
     }
     .filter__content{
         width: 332px;
-        margin:  3rem auto;
+        margin-left:auto;
+        margin-top: 2.3rem;
     }   
     .profile{
         width: 300px;
