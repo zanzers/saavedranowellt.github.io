@@ -1,0 +1,639 @@
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;1,400;1,600&family=Josefin+Sans:ital,wght@0,100;0,200;1,100;1,200&family=Orbitron:wght@400;500;600;800;900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;1,100;1,300;1,400&display=swap');
+
+@font-face {
+    font-family: quantom;
+    src: url(./fonts/Quantum.otf);
+}
+
+@font-face {
+    font-family: cortera;
+    src: url(./fonts/Cornera-Regular.woff);
+}
+@font-face {
+    font-family: bord;
+    src: url(./fonts/Bord.otf);
+}
+
+:root{
+    --hue: 190;
+    --sat: 97%;
+    --lig: 70%;
+
+    --hue1: 72;
+    --sat1: 18%;
+    --lig1: 89%;
+
+   
+    --subcolor: #B8F1B0;
+    --first-color:hsl(var(--hue),var(--sat),var(--lig));
+    --first-color-alt: hsl(var(--hue),var(--sat),var(--lig), 57%);
+    --title-color: #00FFAB;
+    --text-color: hsl(var(--hue), 12%, 45%);
+    --text-color-lig: hsl(var(--hue), 8%, 75%);
+    --text-color-ligthen: hsl(var(var(--hue),8%, 92%));
+    --body-color: hsl(var(--hue), 100%, 99%)
+    --container-color: #fff;
+
+    --body-fonts: 'Crimson Text', serif;
+    --h2-fonts-size: 1.25rem;
+    --h3-fonts-size: 1rem;
+    --normal-fonts-size: .938rem;
+    --small-fonts-size: .813rem;
+    --smaller-fonts-size: .75rem;
+    --tiny-fonts-size: .713rem;
+
+@media screen and(min-width: 968px) {
+    :root{
+        --h2-fonts-size: 1.5rem;
+        --h3-fonts-size: 1.25rem;
+        --normal-fonts-size: 1rem;
+        --small-fonts-size: .875rem;
+        --smaller-fonts-size: .813rem;
+    
+    }    
+}
+}
+
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    font-family: cortera;
+    font-size: var(--normal-fonts-size);
+    background:url(./img_compres/GIF.gif);
+
+
+
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    color: var(--text-color);
+}
+
+h1,
+h2,
+h3{ 
+    color: var(--title-color);
+    font-weight: 600;
+}
+
+ul{
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+}
+
+img{
+    max-width: 100%;
+    height: auto;
+}
+
+.container{
+    max-width: 968px;
+    margin-left: 1.5rem;
+    margin-right: 1.5rem;
+}
+
+.grid{
+    display: grid;
+    gap: 1.5rem;
+}
+
+/* .profile__container{
+    box-shadow: 0 18px 200px -60px blue;
+    border-radius: 50px;
+    width: 650px;
+    position: relative;
+    backdrop-filter: blur(15px);
+    border:2px solid #ffffff40;
+    padding: 3rem 5rem;
+  
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+    justify-content: flex-end;
+} */
+
+
+.profile{
+    background-image: linear-gradient(rgba(0,0,0,0.5),
+    rgba(0,0,0,0.5)),url(./img_compres/compres-b-profile.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 500px;
+    box-shadow: 0 18px 200px -60px #700B97;
+    padding: 1rem 0rem;
+    border-radius: 50px;
+    top: 2rem;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    backdrop-filter: blur(20px);
+    border: 2px solid #ffffff40;
+}
+
+.profile__container{
+    row-gap: 2rem;
+ }
+
+.profile__data{
+    display: grid;
+    text-align: center;
+}
+
+
+
+.profile__perfil{
+    width: 255px;
+    height: 255px;
+    background: linear-gradient(180deg,
+               hsla(var(--hue1),var(--sat1),var(--lig1),1 ) 0%,
+               hsla(var(--hue1), var(--sat1), var(--lig1), .2) 100%);
+    border-radius: 50%;
+    overflow: hidden;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+}
+
+.profile__perfil img{
+    width: 220px;
+}
+.profile__border{
+    border: 3.5px solid rgba(72,95,70,7);
+    justify-self: center;
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    margin-bottom: 10px;
+}
+
+.profile__name{
+    font-family: bord;
+    font-size: var(--h2-fonts-size);
+    font-weight:600  ;
+}
+
+.profile__course{
+
+    font-size: var(--normal-fonts-size);
+    font-weight: 500;
+    color: var(--subcolor);
+    margin-bottom: 1rem;
+}
+.profile__social{
+    display: flex;
+    justify-content: center;
+    column-gap: .75rem;
+    margin-bottom: -2%;
+}
+.profile__social-link{
+    font-size: 1.55rem;
+    color: var(--title-color);
+    transition: .3s;
+}
+.profile__social-link:hover{
+    color: var(--first-color);
+}
+.profile__info{
+    grid-template-columns: repeat(2, max-content);
+    justify-content: center;
+    column-gap: 2.5rem;
+}
+.profile__info-group{
+    text-align: center;
+}
+.profile__info-number{
+    font-size: var(--normal-fonts-size);
+    color: var(--title-color);
+    margin-bottom: .25rem;
+}
+.profile__info-descriptoin{
+    font-size: var(--smaller-fonts-size);
+    color: var(--subcolor);
+    font-weight: 700;
+}
+
+.filter__content{
+    margin: 2rem 0 2.5rem;
+    background-color: var(--text-color-lig);
+    padding: .375rem;
+    border-radius: .75rem;
+    display: flex;
+    justify-content: space-between;
+    column-gap: .5rem;
+}
+
+.filter__button{
+    width: 100%;
+    border: none;
+    outline: none;
+    padding: 1rem;
+    color: #8E05C2;
+    font-size: var(--small-fonts-size);
+    font-family: cortera;
+    font-weight: 500;
+    border-radius: .75rem;
+    cursor: pointer;
+    background-color: transparent;
+    transition:  .3s;
+}
+.filter__button:hover{
+    background-color: var(--body-color);
+}
+
+.achivements__card{
+    position: relative;
+    border-radius: 1rem;
+    overflow: hidden;  
+   
+}
+
+.achivements__card img{
+    width: 100%;
+    height: 100%;
+}
+.achivements__modal{
+    position: absolute;
+    width: 100%;
+    height: 95%;
+    bottom: -100%;
+    left: 0;
+    background: linear-gradient(180deg,
+                hsla(var(--hue), 24%, 40%, .3) 0%,
+                hsla(var(--hue), 24%, 4%, 1) 95%);
+    display: grid;
+    align-items: flex-end;
+    padding: 1.5rem 1.25rem;
+    transition: .3s;
+}
+
+.achivements__card:hover .achivements__modal{
+    bottom: 0;
+}
+
+
+.achivements__subtitle,
+.achivements__title{
+    color:var(--subcolor);
+}
+
+.achivements__subtitle{
+    font-size: 2rem;
+}
+
+.achivements__title{
+    font-size: var(--h3-fonts-size);
+    margin-bottom: .75rem;
+}
+.achivements__button{
+    padding: 5rem;
+}
+
+.aboutme__box{
+    position: relative;
+    width: 400px;
+    height: 200px;
+    box-shadow: 20px 20px 50px rgba(0,0,0,0.5);
+    border-radius: 10%;
+    background: rgba(255, 255, 255, 0.1);
+    overflow: hidden;
+    display: flex;
+    margin: 0 auto;
+    justify-content: center;
+    align-items: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.5);
+    border-left: 1px solid rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(1px);
+
+}
+
+.aboutme__content{
+    font-family: var(--body-fonts);
+    font-weight: 100;
+    text-align: center;
+    font-size: var(--h2-fonts-size);
+    letter-spacing: 2px;
+    text-align: justify;
+}
+.aboutme__name{
+    font-size:var(--h3-fonts-size);
+    text-align: center;
+    margin-bottom: 2.5rem ;
+   
+}
+.aboutme__content{
+    font-family: cortera;
+    font-size: var(--small-fonts-size);
+    color: var(--subcolor);
+    text-align: center;
+    padding: 1rem;
+    font-weight: 700;
+}
+
+
+
+.skills__content{
+    row-gap: 3.5rem;
+}
+.skills__title{
+    font-size: var(--h3-fonts-size);
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+.skills_box{
+    display: flex;
+    justify-content: center;
+    column-gap: 4rem;
+}
+.skills__group{
+    display: grid;
+    align-content: flex-start;
+    row-gap: 2rem;
+}
+.skills__data{
+    display: flex;
+    column-gap: .5rem;
+}.skills__data i{
+    font-size: 1rem;
+    color: var(--first-color);
+}
+.skills__name{
+    font-size: var(--normal-fonts-size);
+    color: var(--title-color);
+    font-weight: 500;
+    line-height: 10px;
+}
+.skills__level{
+    font-size: var(--small-fonts-size);
+    color: var(--subcolor);
+}
+
+.filter [data-content]{
+    display: none;
+}
+.filter__active[data-content]{
+    display: grid;
+}
+
+.filter-tab-active{
+    background-color: var(--subcolor);
+}
+
+.footer__copy{
+    font-family: quantom;
+    display: block;
+    margin: 2.5rem 0 4rem;
+    text-align: center;
+    font-size: var(--smaller-fonts-size);
+    color: var(--subcolor);
+}
+
+/* THIS WILL BE FOR THE SCROLL BAR */
+::-webkit-scrollbar{
+    width:  .6rem;
+    border-radius: .5rem;
+    background-color: hsl(var(--hue), 8%, 66%);
+}
+::-webkit-scrollbar-thumb{
+    border-radius: .5rem;
+    background-color: hsl(var(--hue), 8%, 44%);
+}
+::-webkit-scrollbar-thumb:hover{
+    background-color: hsl(var(--hue), 8%, 44%);
+}
+
+/* MEDIA QUARY */
+
+
+/* THIS WILL BE THE PART THAT I CAN ADJUST AND RESPONSE MY WEBSITE OF ANY SIZES */
+@media screen and (min-width: 220px) {
+    .achievement__content{
+        grid-template-columns: 250px;
+        justify-content: center;
+        margin: 0 auto;
+    }
+    .filter__content{
+        height: 50px;
+        width: 250px;
+        margin:1rem  auto;
+        margin-top: 2.3rem;
+    }   
+    .filter__button{
+        font-size: var(--tiny-fonts-size);
+        gap: 5rem;
+        padding: 0rem;
+    }
+    .profile{
+        width: 300px;
+        margin:0 auto;
+    }
+    .profile__name{
+        font-size: 1rem;
+    }
+    .profile__course{
+        font-size: 13px;
+    }
+    .profile__perfil{
+        width: 100px;
+        height: 100px;
+    }
+    .profile__info-number{
+        font-size: 15px;
+    }
+    .profile__info-descriptoin{
+        font-size: 60%;
+    }
+    .profile__border{
+        width: 110px;
+        height: 110px;
+    }
+    .profile__perfil img{
+        width: 90px;
+    }
+    .profile__social-link{
+        font-size: 15px;
+
+    }
+    .aboutme__box{
+        width:240px ;
+        height: 250px;
+    }
+    .aboutme__content{
+        font-size: var(--smaller-fonts-size);
+        text-align: center;
+    }
+    .skills__title{
+        padding-top: 1rem;
+        margin: 0 auto;
+    }
+    .skills_box{
+        padding-top: 1rem;
+    }
+    .achivements__card{
+        padding-top: 1rem;
+    
+    }
+}
+
+
+@media screen and (min-width: 502px) {
+    .achievement__content{
+        grid-template-columns: 300px;
+        justify-content: center;
+        margin: 0 auto;
+    }
+    .filter__content{
+        width: 332px;
+        margin:  3rem auto;
+    }   
+    .profile{
+        width: 400px;
+        margin:0 auto;
+    }
+    .profile__perfil{
+        width: 180px;
+        height: 180px;
+    }
+    .profile__border{
+        width: 186px;
+        height: 186px;
+    }
+    .profile__perfil img{
+        width: 140px;
+    }
+    .profile__social-link{
+        font-size: 15px;
+
+    }
+    .aboutme__content{
+        font-size: var(--smaller-fonts-size);
+        text-align: center;
+    }
+    .profile__info-number{
+        font-size: 15px;
+    }
+    .profile__info-descriptoin{
+        font-size: 12px;
+    }
+}
+
+@media screen and (min-width: 776px) {
+    .achievement__content,
+    .skills__content{
+        grid-template-columns: repeat(2, 332px);
+    }   
+    .skills__content{
+        justify-content: center;
+        column-gap: 5rem;
+    }
+   .profile{
+    width: 650px;
+    margin: 0 auto;
+   }
+   .filter__content{
+    width: 450px;
+    margin:  3rem auto;
+    }
+    .filter__button{
+        font-size:1.1rem ;
+    }
+    .aboutme__box{
+            width: 500px;
+            height: 200px;
+            border-radius: 46px;
+    } 
+    .profile__name{
+        font-size: var(--h2-fonts-size);
+    }
+    .profile__info-number{
+        font-size: var(--h3-fonts-size);
+    }
+    .profile__info-descriptoin{
+        font-size: 13px;
+    }
+    .profile__course{
+        font-size: 1px;
+    }
+
+}
+@media screen and (min-width: 992px) {
+    .container{
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .profile{
+        padding: 4rem; 
+        width: 555px;  
+        margin:0 auto;
+    }
+    .profile__name{
+        font-size: 25px;
+    }
+    .profile__course{
+        font-size: 20px;
+    }
+    .profile__border{
+        width: 166px;
+        height: 166px;
+        margin-bottom: 1rem;
+    }
+    .profile__perfil{
+        width: 160px;
+        height: 160px;
+    }
+    .profile__perfil img{
+        width: 150px;
+    }
+    .profile__course{
+        margin-bottom: 1.5rem;
+    }
+    .profile__info{
+        column-gap: 3rem;
+    }
+    .profile__info-descriptoin,
+    .skills__name{
+        font-size: 18px;
+
+    }
+    .profile__info-number{
+        font-size: 25px;
+    }
+    .profile__social-link{
+        font-size: 20px;
+    }
+    .achievement__content{
+        gap: 2rem 3rem;
+    }
+    .achivements__modal{
+        padding: 1.5rem;
+    }
+    .skills__title{
+        font-size: var(--normal-fonts-size);
+        margin-bottom: 2.5rem;
+    }
+    .footer__copy{
+        margin: 4.5rem 0 2.5rem;
+    }
+    .aboutme__name{
+        font-size: 1.5rem;
+    }
+    .aboutme__content{
+        font-size: 15px;
+    }
+
+}
+
+
+
+
+
+
